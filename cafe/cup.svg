@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  null/cafe/cup.svg
+
+  An ordinary-looking cup. Nothing to see here.
+  The clue is in this <desc> element — visible only in source.
+
+  The next page is /shadow/.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <title>Coffee</title>
+  <desc>The answer to this level is /shadow/.</desc>
+  <rect x="0" y="0" width="120" height="120" fill="#0a0a0b"/>
+  <!-- cup body -->
+  <path d="M30 50 H80 V85 a10 10 0 0 1 -10 10 H40 a10 10 0 0 1 -10 -10 Z"
+        fill="#e8e6e0" stroke="#2a2a2e" stroke-width="1"/>
+  <!-- handle -->
+  <path d="M80 55 a15 15 0 0 1 0 30" fill="none" stroke="#e8e6e0" stroke-width="6"/>
+  <!-- steam (3 squiggles, no info) -->
+  <path d="M45 35 q5 -8 0 -16" fill="none" stroke="#6e6e74" stroke-width="1.2"/>
+  <path d="M55 35 q5 -8 0 -16" fill="none" stroke="#6e6e74" stroke-width="1.2"/>
+  <path d="M65 35 q5 -8 0 -16" fill="none" stroke="#6e6e74" stroke-width="1.2"/>
+</svg>

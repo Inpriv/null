@@ -1,0 +1,11 @@
+/* shadow — per-level styles.
+   the real clue is text-coloured-as-background. */
+.ghost {
+  color: #0a0a0b;       /* same as --bg */
+  background: #0a0a0b;
+  user-select: text;
+}
+.ghost::selection { color: #d6d6d8; background: #2a2a2e; }
+
+/* "grain" is the answer; placed here for the curious.
+   It is also visible (barely) by selecting the .ghost span. */
