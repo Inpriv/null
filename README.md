@@ -88,6 +88,9 @@ locally. They will on the live site.
   Clicking it shows one subtle direction; clicking again hides it. There
   is no answer stage — the button is a nudge, not a solution. State is
   not persisted.
+- The page **body** holds atmosphere only — never the answer. All
+  real hints live behind the button (or in the source / response
+  headers / file bytes, depending on the level).
 - Some pages plant a **decoy link** (a plausible-looking path that 404s).
   These are documented in `SOLUTIONS.md`.
 - **`/null/` is the false ending.** A comment at the very bottom of
