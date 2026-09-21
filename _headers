@@ -6,6 +6,11 @@
   X-null-level: 4
   X-null-hint: "the next page is a place to sit and think"
 
+# assets: keep them short-lived in browser caches so updates land without
+# users having to hard-reload. Static files at /assets/* get no-cache.
+/assets/*
+  Cache-Control: public, max-age=300, must-revalidate
+
 # catch-all: hint at the existence of the chain, harmless to leak.
 # (only seen in devtools, never in body)
 /*
