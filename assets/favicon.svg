@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#0a0a0b"/>
-  <text x="16" y="22" font-family="ui-monospace, Menlo, monospace" font-size="20"
-        font-weight="500" text-anchor="middle" fill="#8ab4ff">?</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!--
+    null favicon — two stacked triangles, inspired by the inpriv.xyz
+    diamond mark. Cream tone, no background, so it sits well in both
+    light and dark browser chrome.
+  -->
+  <!-- top triangle pointing up -->
+  <polygon points="16,4 26,17 6,17" fill="#d6d8b8"/>
+  <!-- bottom triangle pointing down -->
+  <polygon points="16,28 26,15 6,15" fill="#d6d8b8"/>
 </svg>
