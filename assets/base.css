@@ -163,34 +163,48 @@ button:hover { border-color: var(--accent); color: var(--accent); }
 /* level-tag shown only via inspect */
 .level-tag { display: none; }
 
-/* ----- hint panel + button (hint.js) ------------------------------- */
+/* ----- hint panel + button (inline, centered) --------------------- */
+.hint-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5em auto 1em;
+  text-align: center;
+}
+
 .hint-panel {
   display: none;             /* hidden by default */
-  margin-top: 2em;
+  margin-top: 0.9em;
   padding: 0.7em 0.9em;
   border-left: 2px solid var(--accent);
   background: var(--bg-soft);
   color: var(--fg);
   font-size: 0.92rem;
   white-space: pre-wrap;
+  max-width: 38em;
+  text-align: left;
 }
 .hint-panel:not(:empty) { display: block; }
 
 .hint-toggle {
-  position: fixed;
-  right: 1.2rem;
-  bottom: 1.2rem;
-  z-index: 50;
-  background: var(--bg-soft);
+  background: transparent;
   color: var(--fg-dim);
   border: 1px solid var(--fg-faint);
   font-family: var(--mono);
-  font-size: 0.85rem;
-  padding: 0.4em 0.8em;
+  font-size: 0.78rem;
+  padding: 0.25em 0.7em;
   cursor: pointer;
   border-radius: 2px;
+  letter-spacing: 0.04em;
 }
-.hint-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.hint-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.hint-toggle:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
 
 /* ----- "give up" honeypot note ------------------------------------ */
 .gave-up-note {

@@ -84,6 +84,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const h2 = slot.getAttribute("data-h2") || "";
     const ans = slot.getAttribute("data-a")  || "";
 
+    // Wrap the slot + button in a centered container so the button
+    // sits inline with the panel, not pinned to a screen corner.
+    const wrap = document.createElement("div");
+    wrap.className = "hint-area";
+    slot.parentNode.insertBefore(wrap, slot);
+    wrap.appendChild(slot);
+
     slot.classList.add("hint-panel");
     slot.setAttribute("aria-live", "polite");
     slot.innerHTML = "";
@@ -117,7 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
       render();
     });
 
-    document.body.appendChild(btn);
+    // Button above the panel (panel reveals below it).
+    wrap.appendChild(btn);
     render();
   });
 })();
