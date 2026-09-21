@@ -36,4 +36,43 @@ function wireAnswerForms() {
   );
 })();
 
-document.addEventListener("DOMContentLoaded", wireAnswerForms);
+// 4. "I gave up" silent honeypot. If localStorage.null:gave_up is true,
+//    show a single extra line at the top of the landing page only.
+//    Quiet. No nag. The player knows.
+function maybeShowGaveUp() {
+  if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") return;
+  try {
+    if (localStorage.getItem("null:gave_up") !== "true") return;
+  } catch (_) { return; }
+
+  const note = document.createElement("p");
+  note.className = "faintest gave-up-note";
+  note.textContent = "you gave up once. the game remembers.";
+  // insert as first paragraph in <main>
+  const main = document.querySelector("main");
+  if (main) main.insertBefore(note, main.firstChild);
+}
+
+// 5. wire a button with class="give-up" to set the flag then go home.
+function wireGiveUp() {
+  document.querySelectorAll(".give-up").forEach((el) => {
+    el.addEventListener("click", function (e) {
+      try { localStorage.setItem("null:gave_up", "true"); } catch (_) {}
+      // Let the link's default href=/ still happen.
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  wireAnswerForms();
+  wireGiveUp();
+  maybeShowGaveUp();
+});
+
+// 6. load the hint panel on demand (small, async-safe).
+(function () {
+  var s = document.createElement("script");
+  s.src = "/assets/hint.js";
+  s.defer = true;
+  document.head.appendChild(s);
+})();

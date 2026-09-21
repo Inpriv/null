@@ -14,7 +14,7 @@
 <body>
   <main>
     <h1>source</h1>
-    <p class="faint">Level 4 of 15.</p>
+    <p class="faint">Level 4 of 20.</p>
 
     <p>
       A page can carry messages in places you don't normally read.
@@ -35,9 +35,10 @@
       The page listed there is where you go next.
     </p>
 
-    <p>
-      <a class="faint" href="#" onclick="return false">refresh</a>
-    </p>
+    <div class="hints"
+         data-h1="A web request returns both the page (response body) and a list of headers. Headers carry metadata."
+         data-h2="Open DevTools → Network → click this document request → look at Response Headers. Find X-Next."
+         data-a="Type /cafe/ in the address bar."></div>
   </main>
 
   <footer>

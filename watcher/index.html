@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>watcher — null</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/base.css">
+<script defer src="/assets/base.js"></script>
+<script>
+  // The page is watching you.
+  // It will whisper into your console every five seconds.
+  // The first whisper is a question; the second is the answer.
+  let whispers = [
+    "Are you still here?",
+    "/exit/. Look at the address bar. Type it.",
+    "/exit/. Or click the obvious 'finish' button. It does nothing.",
+    "The obvious button does nothing on purpose."
+  ];
+  window.__whisperIdx = 0;
+  setTimeout(function loop() {
+    const w = whispers[window.__whisperIdx % whispers.length];
+    try { console.log("%c[whisper]", "color:#8ab4ff;", w); } catch(_) {}
+    window.__whisperIdx++;
+    setTimeout(loop, 5000);
+  }, 5000);
+
+  // The 'finish' button is a decoy.
+  window.__fakeFinish = function () {
+    try { console.log("%c[whisper]", "color:#ff8a80;",
+      "That button does nothing. You are being toyed with."); } catch(_) {}
+  };
+</script>
+</head>
+<body>
+  <main>
+    <h1>watcher</h1>
+    <p class="faint">Level 18 of 20.</p>
+
+    <p>
+      You are being watched.
+      Not by a person, not by a server — by the page itself.
+    </p>
+
+    <p class="faint">
+      Some pages talk when you don't expect them to. They do it in the
+      place you only look at when something has gone wrong.
+    </p>
+
+    <p>
+      <button type="button" class="danger" onclick="window.__fakeFinish()">
+        finish the game
+      </button>
+    </p>
+
+    <p class="faintest">
+      (That button does not lead anywhere. Stop clicking it.)
+    </p>
+
+    <div class="hints"
+         data-h1="Pages can run JavaScript. JavaScript can call console.log. Try opening the browser DevTools console."
+         data-h2="Open DevTools (F12 or Ctrl/Cmd+Shift+I) → Console. Wait five seconds. Read what the page says to you."
+         data-a="Type /exit/ in the address bar."></div>
+  </main>
+
+  <footer>
+    <span class="faintest">// session id: 0xDEADBEEF &nbsp; log: on</span>
+  </footer>
+</body>
+</html>

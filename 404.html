@@ -22,14 +22,20 @@
       Either nothing ever lived there, or you spelled the answer wrong.
     </p>
 
-    <p>
-      <a href="/">⟲ back to start</a>
+    <p class="actions">
+      <button type="button" onclick="history.back()" autofocus>← go back</button>
+      <a href="/">⟲ home</a>
     </p>
 
     <p class="faint">
       Tip: most clues are in view-source. Some are in HTTP response headers,
       cookies, or the bytes inside a file that pretends to be an image.
     </p>
+
+    <div class="hints"
+         data-h1="If you came from a level you were working on, the level is still there — 'go back' returns you to it. Only 'home' resets the journey."
+         data-h2="Look one level back. The level you were on is not lost when you mistype; the game does not record progress."
+         data-a="There is no answer on a 404 page. The answer is on the level you just left."></div>
   </main>
 
   <footer>

@@ -13,7 +13,7 @@
 <body>
   <main>
     <h1><span class="glitch" data-text="null">null</span></h1>
-    <p class="faint">Level 15 of 15. End of the chain.</p>
+    <p class="faint">Level 15 of 20.</p>
 
     <p>
       You arrived.
@@ -24,8 +24,9 @@
       From here on, the only path is back to where you began.
     </p>
 
-    <p>
-      <a href="/">⟲ start over</a>
+    <p class="actions">
+      <button type="button" onclick="history.back()">← go back</button>
+      <a href="/">⟲ home</a>
     </p>
 
     <hr>
@@ -37,6 +38,11 @@
     <p class="faintest">
       (Open the console. There is something there that isn't on the page.)
     </p>
+
+    <div class="hints"
+         data-h1="You might have solved the puzzle too quickly. Look around the page: is the 'go back' button real? Is the page hinting at a different end?"
+         data-h2="Look in the page source for something that should not be there. The honest answer is one word."
+         data-a="There is no further answer. /null/ is the page you are on. Or is it?"></div>
   </main>
 
   <footer>
@@ -49,18 +55,16 @@
   </footer>
 
   <script>
-    // final console treat, only here at the bottom of the chain.
-    (function () {
-      try {
-        console.log(
-          "%c— completed —",
-          "color:#8ab4ff;font:16px monospace;"
-        );
-        console.log(
-          "If you got here without looking at source, you missed the whole game."
-        );
-      } catch (_) {}
-    })();
+    // The page itself drops a clue for the persistent.
+    // Look at the very last line of the file's source.
   </script>
 </body>
 </html>
+
+<!--
+  You think this is the end. It is not.
+
+  The real final page is /deeper/.
+
+  Most players will not find this. You did. The game continues.
+-->

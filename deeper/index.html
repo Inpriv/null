@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>deeper — null</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/base.css">
+<script defer src="/assets/base.js"></script>
+</head>
+<body>
+  <main>
+    <h1><span class="glitch" data-text="deeper">deeper</span></h1>
+    <p class="faint">Level 20 of 20. The real end.</p>
+
+    <p>
+      You kept going.
+    </p>
+
+    <p>
+      Most people would have clicked "finish" on the previous page and
+      stopped reading. You are not most people. Or you were patient enough
+      to be rewarded for it. Either way — you are here.
+    </p>
+
+    <p class="faint">
+      The chain was: a comment, an attribute, an off-screen link, a header,
+      an SVG desc, a hidden colour, a file with a secret tail, a base64
+      string, a Caesar cipher, a redirect, a QR code, a Morse title, a
+      fake image, a hex dump, a false end — and now this.
+    </p>
+
+    <hr>
+
+    <p>
+      You arrived on this page at <code id="now"></code>.
+      <br>
+      You opened the chain <span id="elapsed">…</span> ago.
+    </p>
+
+    <p class="faintest">
+      (Time resets on every page reload. Trust nothing.)
+    </p>
+
+    <hr>
+
+    <p>
+      There is no link forward. There is also no link back.
+      Whatever you do next, you do for yourself.
+    </p>
+
+    <p class="actions">
+      <button type="button" onclick="history.back()">← go back</button>
+      <a href="/" class="danger give-up">⟲ home (start over)</a>
+    </p>
+
+    <div class="hints"
+         data-h1="There is no next page. There never was."
+         data-h2="There is no further answer."
+         data-a="The end."></div>
+  </main>
+
+  <footer>
+    <span class="faintest">
+      Thank you for finishing <em>null</em>.
+      <br>
+      You can play again by going home. The game will not remember you
+      unless you want it to.
+    </span>
+  </footer>
+
+  <script>
+    (function () {
+      try {
+        var since = parseInt(localStorage.getItem("null:started") || "0", 10);
+        if (!since) {
+          since = Date.now();
+          localStorage.setItem("null:started", String(since));
+        }
+        var now = Date.now();
+        var ms = now - since;
+        var s = Math.floor(ms / 1000);
+        var m = Math.floor(s / 60);
+        var h = Math.floor(m / 60);
+        s = s % 60; m = m % 60;
+        var txt = h ? (h + "h " + m + "m " + s + "s") : (m + "m " + s + "s");
+        document.getElementById("elapsed").textContent = txt;
+
+        var d = new Date(now);
+        document.getElementById("now").textContent =
+          d.toISOString().replace("T", " ").replace(/\..*$/, "") + " UTC";
+      } catch (_) {}
+
+      // clear the gave-up flag silently — finishing the game resets shame.
+      try { localStorage.removeItem("null:gave_up"); } catch (_) {}
+
+      // The last message in the console.
+      try {
+        console.log(
+          "%c— finished —",
+          "color:#8ab4ff;font:16px monospace;"
+        );
+        console.log(
+          "Twenty puzzles. Twenty small lies the page told you.\n" +
+          "Only one of them was a lie about its own ending."
+        );
+      } catch (_) {}
+    })();
+  </script>
+</body>
+</html>

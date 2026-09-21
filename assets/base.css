@@ -162,3 +162,89 @@ button:hover { border-color: var(--accent); color: var(--accent); }
 
 /* level-tag shown only via inspect */
 .level-tag { display: none; }
+
+/* ----- hint panel + button (hint.js) ------------------------------- */
+.hint-panel {
+  display: none;             /* hidden by default */
+  margin-top: 2em;
+  padding: 0.7em 0.9em;
+  border-left: 2px solid var(--accent);
+  background: var(--bg-soft);
+  color: var(--fg);
+  font-size: 0.92rem;
+  white-space: pre-wrap;
+}
+.hint-panel:not(:empty) { display: block; }
+
+.hint-toggle {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 50;
+  background: var(--bg-soft);
+  color: var(--fg-dim);
+  border: 1px solid var(--fg-faint);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.hint-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ----- "give up" honeypot note ------------------------------------ */
+.gave-up-note {
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin-bottom: 1em;
+}
+
+/* ----- 404 actions bar -------------------------------------------- */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin: 1em 0;
+}
+.actions button,
+.actions a {
+  background: var(--bg-soft);
+  color: var(--fg);
+  border: 1px solid var(--fg-faint);
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  padding: 0.4em 0.9em;
+  cursor: pointer;
+  text-decoration: none;
+}
+.actions button:hover,
+.actions a:hover { border-color: var(--accent); color: var(--accent); }
+.actions .danger:hover { border-color: var(--warn); color: var(--warn); }
+
+/* ----- exit / deeper ---------------------------------------------- */
+#real-route {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+a.big {
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.6em 1.2em;
+  border: 1px solid var(--fg-dim);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+a.big:hover { border-color: var(--accent); color: var(--accent); }
+
+button.danger {
+  background: transparent;
+  color: var(--warn);
+  border-color: var(--warn);
+}
+button.danger:hover {
+  background: var(--bg-soft);
+  color: var(--warn);
+}
