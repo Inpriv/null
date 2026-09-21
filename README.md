@@ -80,12 +80,12 @@ but from anyone who only plays.
 ├── hollow/           # Level 12
 ├── doors/            # Level 13
 ├── encore/           # Level 14
-├── null/             # Level 15 (mid-chain, not an ending — see README below)
-├── kettle/           # Level 16
-├── binary/           # Level 17
-├── watcher/          # Level 18
-├── exit/             # Level 19
-└── deeper/           # Level 20
+├── null/             # mid-chain — not an ending
+├── kettle/           # hidden half begins
+├── binary/
+├── watcher/
+├── exit/
+└── deeper/
 ```
 
 Each folder is self-contained: `index.html` plus any per-level CSS,
