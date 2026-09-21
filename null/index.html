@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>null — null</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/base.css">
+<script defer src="/assets/base.js"></script>
+</head>
+<body>
+  <main>
+    <h1><span class="glitch" data-text="null">null</span></h1>
+    <p class="faint">Level 15 of 15. End of the chain.</p>
+
+    <p>
+      You arrived.
+    </p>
+
+    <p>
+      There is no next page. This <em>is</em> the page whose name you typed.
+      From here on, the only path is back to where you began.
+    </p>
+
+    <p>
+      <a href="/">⟲ start over</a>
+    </p>
+
+    <hr>
+
+    <p class="faint">
+      <code>SequenceError: end_of_chain reached.</code>
+    </p>
+
+    <p class="faintest">
+      (Open the console. There is something there that isn't on the page.)
+    </p>
+  </main>
+
+  <footer>
+    <span class="faintest">
+      Thank you for playing.
+      <br>
+      If you enjoyed this, send a friend the address bar — every link
+      they need is already on the page they're on.
+    </span>
+  </footer>
+
+  <script>
+    // final console treat, only here at the bottom of the chain.
+    (function () {
+      try {
+        console.log(
+          "%c— completed —",
+          "color:#8ab4ff;font:16px monospace;"
+        );
+        console.log(
+          "If you got here without looking at source, you missed the whole game."
+        );
+      } catch (_) {}
+    })();
+  </script>
+</body>
+</html>

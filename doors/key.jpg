@@ -1,0 +1,9 @@
+JPEG? No. This is plain text. There is no image.
+
+The next page is /encore/.
+
+(If your browser shows a broken-image icon for /doors/key.jpg, that is
+exactly what should happen. Right-click, "Save link as...", and open it
+in a text editor. Or simply inspect the network request — the bytes
+the server returned start with "JPEG? No." which is not how JPEG files
+begin.)
