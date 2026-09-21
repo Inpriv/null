@@ -67,12 +67,13 @@ locally. They will on the live site.
 
    ```html
    <div class="hints"
-        data-h1="subtle direction"
-        data-h2="literal direction"
-        data-a="the answer URL"></div>
+        data-h1="a subtle hint"></div>
    ```
 
-   If `data-a` is empty the hint button is not shown for that page.
+   Only `data-h1` is used now (single subtle nudge). The other two
+   attributes (`data-h2`, `data-a`) are reserved for future use and
+   are not surfaced anywhere. If `data-h1` is empty, the hint button
+   is not shown for that page.
 4. If the level needs CSS, image, or a JS file, put them in `<slug>/`.
    Shared styles live in `assets/base.css` — extend, don't fork.
 5. From the previous level, link to `/<slug>/` (in an HTML comment, a
@@ -84,8 +85,9 @@ locally. They will on the live site.
 ## Hints, decoys, and the false end
 
 - Every page has a small inline **hint** button centered below the content.
-  It cycles through three stages: subtle → literal → answer. The state is
-  not persisted — reloading the page hides everything again.
+  Clicking it shows one subtle direction; clicking again hides it. There
+  is no answer stage — the button is a nudge, not a solution. State is
+  not persisted.
 - Some pages plant a **decoy link** (a plausible-looking path that 404s).
   These are documented in `SOLUTIONS.md`.
 - **`/null/` is the false ending.** A comment at the very bottom of
