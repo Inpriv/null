@@ -30,10 +30,10 @@ without making the *source* surface dishonest about it.
 <summary><strong>Maintainer notes</strong> <em>(spoiler)</em></summary>
 
 The in-game surface never states the total chain length. Every
-counter in the first half of the chain reads `Level N of 15`. The
-puzzle that ends the visible chain looks exactly like every other
-puzzle: a normal page, a normal link forward, normal atmosphere,
-normal hint button.
+counter in the first half of the chain reads against the same
+denominator. The puzzle that ends the visible chain looks exactly
+like every other puzzle: a normal page, a normal link forward,
+normal atmosphere, normal hint button.
 
 If the player trusts that link and keeps going, they will eventually
 notice the level counter is no longer counting toward the same
