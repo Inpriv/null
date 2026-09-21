@@ -27,7 +27,7 @@ make the *in-game* surface honest about the chain's true length
 without making the *source* surface dishonest about it.
 
 <details>
-<summary><strong>How the chain length is hidden</strong> (spoilers)</summary>
+<summary><strong>Maintainer notes</strong></summary>
 
 The player is told on the landing page that there are fifteen
 levels. Every counter in the first half of the chain reads
@@ -48,10 +48,10 @@ not from anyone willing to look, but from anyone who only plays.
 
 </details>
 
-## Repo layout (maintainers only)
+## Repo layout
 
 <details>
-<summary><strong>Full file list</strong> (spoilers — names reveal level count)</summary>
+<summary><strong>Project structure</strong></summary>
 
 ```
 .
@@ -123,7 +123,7 @@ fails open if the admin endpoint is unreachable.
 ## Add a new level
 
 <details>
-<summary><strong>Step-by-step</strong></summary>
+<summary><strong>Adding a level — checklist</strong></summary>
 
 1. Pick a short slug (one word, lowercase). It becomes both the folder
    name and the answer other levels must point at.
@@ -150,7 +150,7 @@ fails open if the admin endpoint is unreachable.
 ## Design rules
 
 <details>
-<summary><strong>The full rulebook</strong></summary>
+<summary><strong>Design notes</strong></summary>
 
 - No accounts, no login, no server-side answer checking. Getting it
   wrong = 404. That is the whole game.
