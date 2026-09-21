@@ -1,8 +1,7 @@
 # null
 
 A sequential online puzzle game in the tradition of *notpron*.
-**Twenty pages**, each one pointing at the next.
-Solve the puzzle on a page → the answer is the URL slug of the next page.
+**Fifteen pages**, each one pointing at the next — or so it seems.
 There is a false ending at `/null/` and a real one at `/deeper/`. Most players never find the second.
 
 Live: **https://null.inpriv.xyz**
