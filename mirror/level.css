@@ -1,0 +1,7 @@
+/* mirror — per-level override.
+   hides the real exit link to teach the "CSS display:none" trick. */
+#exit {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
