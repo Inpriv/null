@@ -9,8 +9,8 @@
 <meta name="answer" content="encoder">
 <meta name="hint" content="This tag is a red herring. Real meta tags are usually og:*, twitter:*, or charset.">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=1">
-<link rel="stylesheet" href="/assets/base.css?v=3">
-<script defer src="/assets/base.js?v=4"></script>
+<link rel="stylesheet" href="/assets/base.css?v=4">
+<script defer src="/assets/base.js?v=5"></script>
 </head>
 <body>
   <main>
@@ -21,25 +21,12 @@
       Everything is, in the end, just zeros and ones.
     </p>
 
-    <p class="faint">
-      Your browser is showing a string of bits in the tab title.
-      Each group of eight bits is one byte, which is one ASCII letter.
-      Decode all the groups. The word you get is a URL.
-    </p>
-
-    <p class="faintest">
-      (The two meta tags above the title are decoys. Trust only what the
-      page actually shows you.)
-    </p>
-
     <div class="hints"
-         data-h1="Eight bits = one byte. Most ASCII printable characters have values 32–127."
-         data-h2="Read the title. Split into 8-bit groups. Convert each group from binary to a decimal number, then to its ASCII letter."
-         data-a="Type /watcher/ in the address bar."></div>
+         data-h1="The browser tab title is text the page writes on you. It is not necessarily the page's headline — it can be anything the page wants it to be."></div>
   </main>
 
   <footer>
-    <span class="faintest">// 0b01110011 = 's'</span>
+    <span class="faintest">// 0b01110011 = ?</span>
   </footer>
 </body>
 </html>

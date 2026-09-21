@@ -7,11 +7,12 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0a0a0b">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=1">
-<link rel="stylesheet" href="/assets/base.css?v=3">
-<script defer src="/assets/base.js?v=4"></script>
+<link rel="stylesheet" href="/assets/base.css?v=4">
+<script defer src="/assets/base.js?v=5"></script>
 <script>
-  // Set a cookie that, combined with the ROT13 line below, points the way.
-  document.cookie = "null_h=8; path=/; SameSite=Lax";
+  // A cookie is set when this page loads. It does not solve the puzzle
+  // on its own, but it tells you the level number when read.
+  document.cookie = "null_h=9; path=/; SameSite=Lax";
 </script>
 </head>
 <body>
@@ -25,19 +26,12 @@
 
     <pre><code>Gur arkg cntr vf /ornpba/.</code></pre>
 
-    <p class="faint">
-      ROT13 shifts every letter by 13 places in the alphabet. Apply it to the
-      line above and the result is a URL.
-    </p>
-
     <div class="hints"
-         data-h1="ROT13: shift every letter by 13 places in the alphabet. A 26-letter alphabet means ROT13(ROT13(x)) = x."
-         data-h2="Apply ROT13 to 'Gur arkg cntr vf /ornpba/.' by hand or with an online ROT13 tool. The result is a URL."
-         data-a="Type /beacon/ in the address bar."></div>
+         data-h1="The alphabet is a wheel. Turn it by the same amount in the same direction and ordinary text becomes a substitution cipher. Turn it again and it comes back."></div>
   </main>
 
   <footer>
-    <span class="faintest">// shift = 13</span>
+    <span class="faintest">// shift = ?</span>
   </footer>
 </body>
 </html>

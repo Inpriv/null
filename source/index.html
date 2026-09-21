@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#0a0a0b">
 <meta name="icon" content="JSYK the real exit is in a response header named X-Next">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=1">
-<link rel="stylesheet" href="/assets/base.css?v=3">
-<script defer src="/assets/base.js?v=4"></script>
+<link rel="stylesheet" href="/assets/base.css?v=4">
+<script defer src="/assets/base.js?v=5"></script>
 </head>
 <body>
   <main>
@@ -18,27 +18,17 @@
 
     <p>
       A page can carry messages in places you don't normally read.
-      This one is hiding the answer in two places at once.
-      Look in the meta tags here, and in the response headers the server
-      sends back when you load this page.
-    </p>
-
-    <p class="faint">
-      Open the Network tab in devtools, click the request for this document,
-      and look at <em>Response Headers</em>.
+      This one is hiding something in two places at once.
     </p>
 
     <hr>
 
     <p class="faintest">
-      The header you want is the one called <code>X-Next</code>.
-      The page listed there is where you go next.
+      One is up here. The other lives further down.
     </p>
 
     <div class="hints"
-         data-h1="A web request returns both the page (response body) and a list of headers. Headers carry metadata."
-         data-h2="Open DevTools → Network → click this document request → look at Response Headers. Find X-Next."
-         data-a="Type /cafe/ in the address bar."></div>
+         data-h1="When your browser asks a server for a page, the server sends back both the page and a small list of metadata — headers. Headers can hold anything."></div>
   </main>
 
   <footer>
