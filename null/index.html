@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0a0a0b">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=1">
-<link rel="stylesheet" href="/assets/base.css?v=6">
+<link rel="stylesheet" href="/assets/base.css?v=7">
 <script defer src="/assets/base.js?v=7"></script>
 </head>
 <body>
@@ -16,60 +16,29 @@
     <p class="faint">Level 15 of 15.</p>
 
     <p>
-      You arrived.
+      A page that names nothing.
     </p>
 
     <p>
-      There is no next page. This <em>is</em> the page whose name you typed.
-      From here on, the only path is back to where you began.
-    </p>
-
-    <p class="actions">
-      <button type="button" onclick="history.back()">← go back</button>
-      <a href="/">⟲ home</a>
-    </p>
-
-    <hr>
-
-    <p class="faint">
-      <code>SequenceError: end_of_chain reached.</code>
+      <a href="/kettle/">continue →</a>
     </p>
 
     <div class="hints"
-         data-h1="Pages can lie. Some endings are not endings. Some 'no next page' messages are themselves a clue."></div>
+         data-h1="A page whose name is 'null' is not nothing — it is whatever the address bar typed."></div>
   </main>
 
   <footer>
-    <span class="faintest">
-      Thank you for playing.
-      <br>
-      If you enjoyed this, send a friend the address bar — every link
-      they need is already on the page they're on.
-    </span>
+    <span class="faintest">// fifteen down, five to go.</span>
   </footer>
 
   <script>
-    // A short, atmospheric message. Intentionally misleading — there is
-    // no hint here about the real continuation. The persistent player
-    // finds it another way.
+    // Atmospheric only. Nothing in the console reveals the rest of the chain.
     try {
       console.log(
-        "%c— completed —",
-        "color:#8ab4ff;font:16px monospace;"
-      );
-      console.log(
-        "Fifteen puzzles. Fifteen small lies the page told you.\n" +
-        "Some of them were about themselves."
+        "%c—",
+        "color:#6e6e74;font:14px monospace;"
       );
     } catch (_) {}
   </script>
 </body>
 </html>
-
-<!--
-  You think this is the end. It is not.
-
-  The real final page is /deeper/.
-
-  Most players will not find this. You did. The game continues.
--->

@@ -4,16 +4,20 @@ A sequential online puzzle game in the tradition of *notpron*.
 **Twenty pages**, each one pointing at the next.
 Solve the puzzle on a page → the answer is the URL slug of the next page.
 
-Fifteen of them are presented to the player as the entire chain. The
-remaining five only reveal themselves once the player notices something
-is off — a false ending at `/null/`, a counter on `/exit/` that says
-`Level 19 of 15`, a comment at the very bottom of `/null/'s` HTML
-source. A handful of players reach `/deeper/`; most do not.
+The first fifteen are presented to the player as the complete chain.
+The last five (kettle, binary, watcher, exit, deeper) only appear if
+the player keeps typing — they are not signposted from the first half.
+The counters in the first half read `Level N of 15`; the counters in
+the second half continue from there. A reader who notices the
+numbering is off has found the seam.
 
-This is on purpose. The game is also fully open-source, so any player
-who reads the repo will see exactly twenty levels. The public surface
-and the public source agree; only the in-game surface is allowed to
-disagree with itself.
+A handful of players reach `/deeper/`. Most do not. There is no
+public link to it.
+
+This is on purpose. The game is fully open-source, so any player who
+reads the repo will see all twenty levels. The in-game surface and
+the public source agree on the count — the in-game surface just
+agrees *later* than most players expect.
 
 Live: **https://null.inpriv.xyz**
 
