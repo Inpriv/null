@@ -10,9 +10,7 @@ try {
 } catch (_) { /* private mode etc. */ }
 
 // 2. form-to-url helper: any <form class="answer-form"> with a single
-//    text input named "a" submits to /<value>/ on Enter. Case-insensitive,
-//    trimmed, spaces collapsed. This is the *only* standard interaction;
-//    most levels don't even need it.
+//    text input named "a" submits to /<value>/ on Enter.
 function wireAnswerForms() {
   document.querySelectorAll("form.answer-form").forEach((form) => {
     form.addEventListener("submit", (e) => {
@@ -38,7 +36,6 @@ function wireAnswerForms() {
 
 // 4. "I gave up" silent honeypot. If localStorage.null:gave_up is true,
 //    show a single extra line at the top of the landing page only.
-//    Quiet. No nag. The player knows.
 function maybeShowGaveUp() {
   if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") return;
   try {
@@ -48,7 +45,6 @@ function maybeShowGaveUp() {
   const note = document.createElement("p");
   note.className = "faintest gave-up-note";
   note.textContent = "you gave up once. the game remembers.";
-  // insert as first paragraph in <main>
   const main = document.querySelector("main");
   if (main) main.insertBefore(note, main.firstChild);
 }
@@ -58,7 +54,6 @@ function wireGiveUp() {
   document.querySelectorAll(".give-up").forEach((el) => {
     el.addEventListener("click", function (e) {
       try { localStorage.setItem("null:gave_up", "true"); } catch (_) {}
-      // Let the link's default href=/ still happen.
     });
   });
 }
@@ -69,10 +64,60 @@ document.addEventListener("DOMContentLoaded", function () {
   maybeShowGaveUp();
 });
 
-// 6. load the hint panel on demand (small, async-safe).
+// 6. three-stage hint panel — implemented inline so we don't depend on a
+//    second HTTP fetch that defer-timing can swallow.
+//    Pages opt in by including <div class="hints" data-h1 data-h2 data-a>.
 (function () {
-  var s = document.createElement("script");
-  s.src = "/assets/hint.js";
-  s.defer = true;
-  document.head.appendChild(s);
+  if (window.__nullHintInit) return;
+  window.__nullHintInit = true;
+
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    const slot = document.querySelector(".hints");
+    if (!slot) return;
+
+    const h1 = slot.getAttribute("data-h1") || "";
+    const h2 = slot.getAttribute("data-h2") || "";
+    const ans = slot.getAttribute("data-a")  || "";
+
+    slot.classList.add("hint-panel");
+    slot.setAttribute("aria-live", "polite");
+    slot.innerHTML = "";
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "hint-toggle";
+    btn.textContent = "hint";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-label", "Reveal a hint");
+
+    let stage = 0;
+    function render() {
+      const label =
+        stage === 0 ? "" :
+        stage === 1 ? "Hint 1 — " :
+        stage === 2 ? "Hint 2 — " :
+                      "Answer — ";
+      const body =
+        stage === 0 ? "" :
+        stage === 1 ? h1 :
+        stage === 2 ? h2 :
+                      ans;
+      slot.textContent = label + body;
+      btn.setAttribute("aria-expanded", stage > 0 ? "true" : "false");
+      btn.textContent = stage === 0 ? "hint" : "hide";
+    }
+
+    btn.addEventListener("click", function () {
+      stage = (stage + 1) % 4;
+      render();
+    });
+
+    document.body.appendChild(btn);
+    render();
+  });
 })();
