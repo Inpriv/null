@@ -1,8 +1,19 @@
 # null
 
 A sequential online puzzle game in the tradition of *notpron*.
-**Fifteen pages**, each one pointing at the next — or so it seems.
-There is a false ending at `/null/` and a real one at `/deeper/`. Most players never find the second.
+**Twenty pages**, each one pointing at the next.
+Solve the puzzle on a page → the answer is the URL slug of the next page.
+
+Fifteen of them are presented to the player as the entire chain. The
+remaining five only reveal themselves once the player notices something
+is off — a false ending at `/null/`, a counter on `/exit/` that says
+`Level 19 of 15`, a comment at the very bottom of `/null/'s` HTML
+source. A handful of players reach `/deeper/`; most do not.
+
+This is on purpose. The game is also fully open-source, so any player
+who reads the repo will see exactly twenty levels. The public surface
+and the public source agree; only the in-game surface is allowed to
+disagree with itself.
 
 Live: **https://null.inpriv.xyz**
 
