@@ -81,8 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!slot) return;
 
     const h1 = slot.getAttribute("data-h1") || "";
-    const h2 = slot.getAttribute("data-h2") || "";
-    const ans = slot.getAttribute("data-a")  || "";
 
     // Wrap the slot + button in a centered container so the button
     // sits inline with the panel, not pinned to a screen corner.
@@ -102,25 +100,15 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.setAttribute("aria-expanded", "false");
     btn.setAttribute("aria-label", "Reveal a hint");
 
-    let stage = 0;
+    let shown = false;
     function render() {
-      const label =
-        stage === 0 ? "" :
-        stage === 1 ? "Hint 1 — " :
-        stage === 2 ? "Hint 2 — " :
-                      "Answer — ";
-      const body =
-        stage === 0 ? "" :
-        stage === 1 ? h1 :
-        stage === 2 ? h2 :
-                      ans;
-      slot.textContent = label + body;
-      btn.setAttribute("aria-expanded", stage > 0 ? "true" : "false");
-      btn.textContent = stage === 0 ? "hint" : "hide";
+      slot.textContent = shown ? ("Hint — " + h1) : "";
+      btn.setAttribute("aria-expanded", shown ? "true" : "false");
+      btn.textContent = shown ? "hide" : "hint";
     }
 
     btn.addEventListener("click", function () {
-      stage = (stage + 1) % 4;
+      shown = !shown;
       render();
     });
 
