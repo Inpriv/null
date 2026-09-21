@@ -27,7 +27,7 @@ make the *in-game* surface honest about the chain's true length
 without making the *source* surface dishonest about it.
 
 <details>
-<summary><strong>Maintainer notes</strong></summary>
+<summary><strong>Maintainer notes</strong> <em>(spoiler)</em></summary>
 
 The player is told on the landing page that there are fifteen
 levels. Every counter in the first half of the chain reads
@@ -51,7 +51,7 @@ not from anyone willing to look, but from anyone who only plays.
 ## Repo layout
 
 <details>
-<summary><strong>Project structure</strong></summary>
+<summary><strong>Project structure</strong> <em>(spoiler)</em></summary>
 
 ```
 .
