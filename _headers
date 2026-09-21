@@ -1,0 +1,13 @@
+# _headers — Cloudflare Pages response-headers file.
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/source/*
+  X-Next: /cafe/
+  X-null-level: 4
+  X-null-hint: "the next page is a place to sit and think"
+
+# catch-all: hint at the existence of the chain, harmless to leak.
+# (only seen in devtools, never in body)
+/*
+  X-Powered-By: null
+  Referrer-Policy: no-referrer

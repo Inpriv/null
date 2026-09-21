@@ -1,0 +1,16 @@
+# Solutions live outside the repo on purpose — never commit them.
+# (If you fork and run a *private* instance, delete this line first.)
+SOLUTIONS.md
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# wrangler / cloudflare local artefacts
+.wrangler/
+.dev.vars
+
+# node (we don't use it but in case)
+node_modules/

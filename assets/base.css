@@ -1,0 +1,164 @@
+/* null — base stylesheet
+ * shared across every level. override per-level by adding <style> in head.
+ */
+
+:root {
+  --bg: #0a0a0b;
+  --bg-soft: #111114;
+  --fg: #d6d6d8;
+  --fg-dim: #6e6e74;
+  --fg-faint: #2a2a2e;
+  --accent: #8ab4ff;
+  --warn: #ff8a80;
+  --mono: ui-monospace, "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  width: min(72ch, 92vw);
+  margin: 0 auto;
+  padding: 6vh 0 8vh;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin: 0 0 1em;
+  color: var(--fg);
+}
+
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1.1rem; color: var(--fg-dim); }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent);
+}
+a:hover { border-bottom-style: solid; }
+a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+
+hr {
+  border: 0;
+  border-top: 1px dashed var(--fg-faint);
+  margin: 2em 0;
+}
+
+::selection { background: #2a2a2e; color: var(--fg); }
+
+.faint { color: var(--fg-dim); }
+.faintest { color: var(--fg-faint); }
+.mono { font-family: var(--mono); }
+
+.hr-noise {
+  font-family: var(--mono);
+  color: var(--fg-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: -1px;
+}
+
+/* utility: hidden visually but in DOM (for screen readers / source view) */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+footer {
+  width: min(72ch, 92vw);
+  margin: 0 auto;
+  padding: 0 0 3vh;
+  color: var(--fg-faint);
+  font-size: 0.85rem;
+}
+
+/* error / glitch flourish — cosmetic only */
+.glitch {
+  display: inline-block;
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.glitch::before {
+  color: var(--warn);
+  transform: translate(1px, 0);
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  opacity: 0.6;
+}
+.glitch::after {
+  color: var(--accent);
+  transform: translate(-1px, 0);
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  opacity: 0.6;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+.blink { animation: blink 1s steps(1) infinite; }
+
+@keyframes pulse-faint {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.5; }
+}
+.pulse-faint { animation: pulse-faint 3s ease-in-out infinite; }
+
+/* standard: redirect-on-form-submit pattern.
+ * If a level uses a <form> with class "answer-form", pressing Enter
+ * on the input navigates to /<answer>/ if the input is non-empty. */
+input[type="text"] {
+  background: var(--bg-soft);
+  color: var(--fg);
+  border: 1px solid var(--fg-faint);
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  padding: 0.4em 0.6em;
+  width: 100%;
+  max-width: 24em;
+}
+input[type="text"]:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+button {
+  background: var(--bg-soft);
+  color: var(--fg);
+  border: 1px solid var(--fg-faint);
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent); color: var(--accent); }
+
+/* level-tag shown only via inspect */
+.level-tag { display: none; }

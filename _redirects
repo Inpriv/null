@@ -1,0 +1,9 @@
+# _redirects — Cloudflare Pages redirects.
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Only one of the ten numbered paths under /beacon/ resolves.
+# The other nine give 404, which is the point.
+# (Static files win over redirects when both exist; we deliberately
+# do not serve a 404 file for /beacon/[n]/ for n in 1..9.)
+
+/beacon/0/   /zero/    302
