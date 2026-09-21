@@ -83,9 +83,9 @@ locally. They will on the live site.
 
 ## Hints, decoys, and the false end
 
-- Every page has a floating **hint** button (bottom-right). It cycles
-  through three stages: subtle → literal → answer. The state is not
-  persisted — reloading the page hides everything again.
+- Every page has a small inline **hint** button centered below the content.
+  It cycles through three stages: subtle → literal → answer. The state is
+  not persisted — reloading the page hides everything again.
 - Some pages plant a **decoy link** (a plausible-looking path that 404s).
   These are documented in `SOLUTIONS.md`.
 - **`/null/` is the false ending.** A comment at the very bottom of
