@@ -4,8 +4,7 @@ A sequential online puzzle game in the tradition of *notpron*.
 Fifteen pages, each one pointing at the next.
 Solve the puzzle on a page → the answer is the URL slug of the next page.
 
-Live: **https://null.inpriv.xyz** (or the Pages dev URL while the custom
-domain is being attached).
+Live: **https://null.inpriv.xyz**
 
 ## Repo layout
 
