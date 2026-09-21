@@ -29,22 +29,22 @@ without making the *source* surface dishonest about it.
 <details>
 <summary><strong>Maintainer notes</strong> <em>(spoiler)</em></summary>
 
-The player is told on the landing page that there are fifteen
-levels. Every counter in the first half of the chain reads
-`Level N of 15`. The puzzle that ends the visible chain looks
-exactly like every other puzzle: a normal page, a normal link
-forward, normal atmosphere, normal hint button.
+The in-game surface never states the total chain length. Every
+counter in the first half of the chain reads `Level N of 15`. The
+puzzle that ends the visible chain looks exactly like every other
+puzzle: a normal page, a normal link forward, normal atmosphere,
+normal hint button.
 
 If the player trusts that link and keeps going, they will eventually
-notice the level counter is no longer counting toward fifteen. By
-that point they have already solved four or five levels that the
-landing page said did not exist. A handful of players will then go
-looking; the rest will treat the visible ending as final and move on.
+notice the level counter is no longer counting toward the same
+denominator. By that point they have already solved four or five
+levels that the landing page said did not exist. A handful of
+players will then go looking; the rest will treat the visible
+ending as final and move on.
 
-The chain is, of course, longer than fifteen. That fact is
-available from the very first line of this README and from the
-repo description on GitHub. The in-game surface keeps it hidden —
-not from anyone willing to look, but from anyone who only plays.
+The chain is, of course, longer than the visible half. The in-game
+surface keeps that fact hidden — not from anyone willing to look,
+but from anyone who only plays.
 
 </details>
 
@@ -196,5 +196,4 @@ deployment.
 ## License
 
 MIT. Use it, fork it, host your own variant. If you make a fork that
-tells players they are inside a real chain of fifteen levels, that
-is your call.
+tells players they are inside a real chain, that is your call.
